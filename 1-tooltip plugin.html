@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tooltip plugin</title>
+    <link rel="stylesheet" href="bootstrap-4.6.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="boot1.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+            // CAN USE ID WITH # FOR DATA-TOGGLE='TOOLTIP'
+        });
+
+        $(function(){
+            $('#example').tooltip({
+                html : true
+                // USE HTML PROPERTIES IN TITLE OF TOOLTIP
+            });
+        });
+
+        $(function(){
+            $('#example2').tooltip({
+                html : true,
+                animation : false // REMOVE SMOOTH ANIMATION FOR TOOLTIP TITLE
+            });
+        });
+
+        $(function(){
+            $('#example3').tooltip({
+                html : true,
+                delay : {"show":1000,"hide":1000}
+            });
+        });
+
+        $(function(){
+            $('#example4').tooltip({
+                html : true,
+                placement : "bottom"
+                // USE TO PLACE TOOLTIP WITHIN FUNCTION NOT BY HTML
+            });
+        });
+
+        $(function(){
+            $('#example5').tooltip({
+                html : true,
+                placement : "bottom", // USE TO PLACE TOOLTIP WITHIN FUNCTION NOT BY HTML
+                title : "title with <br> function property"
+            });
+        });
+
+        $(function(){
+            $('#example6').tooltip({
+                html : true,
+                placement : "right", // USE TO PLACE TOOLTIP WITHIN FUNCTION NOT BY HTML
+                title :"<img src='Photo4.avif'>" //USING IMAGE TO SHOW IN TOOLTIP BY A FUNCTION
+            });
+        });
+
+        $(function(){
+            $('#click-me').tooltip({
+                html : true,
+                placement : "bottom",
+                title : "click to show/hide tooltip",
+                trigger : "click" // click to show tooltip
+            });
+        });
+
+        $(function(){
+            $("#showbtn").click(function(){
+                $("#example7").tooltip('show');
+            });
+            $("#hidebtn").click(function(){
+                $("#example7").tooltip('hide');
+            });
+        });
+
+        $(function(){
+            $("#showbtn2").click(function(){
+                $("#example8").tooltip('enable');
+            });
+            $("#hidebtn2").click(function(){
+                $("#example8").tooltip('disable');
+            });
+        });
+
+        $(function(){
+            $("#showbtn1").click(function(){
+                $("#example9").tooltip('toggle');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h3 class="text-center display-4">Tooltip plugin</h3>
+        <div class="row py-5">
+            <div class="col">
+                <button class="btn btn-primary mx-5" data-placement="top" title="submit here" data-toggle="tooltip">submit</button>
+                <!-- TOP IS THE DEFAULT VALUE IN TOOLTIP -->
+                <button class="btn btn-primary mx-5" data-placement="left" title="submit here" data-toggle="tooltip">submit</button>
+                <button class="btn btn-primary mx-5" data-placement="right" title="submit here" data-toggle="tooltip">submit</button>
+                <button class="btn btn-primary mx-5" data-placement="bottom" title="submit here" data-toggle="tooltip">submit</button>
+            </div>
+        </div>
+        <div class="row py-5">
+            <div class="col">
+                <button class="btn btn-primary mx-5" data-placement="top" title="Use of <br> html break tag" id="example">example1</button>
+                <button class="btn btn-primary mx-5" data-placement="top" title="Animation off" id="example2">example2</button>
+                <button class="btn btn-primary mx-5" data-placement="top" title="1 second <br> delay!" id="example3">example3</button>
+                <button class="btn btn-primary mx-5" title="placement bottom with <br> function property" id="example4">example4</button>
+            </div>
+        </div>
+        <div class="row py-5">
+            <div class="col">
+                <button class="btn btn-primary mx-5" id="example5">example5</button>
+                <button class="btn btn-primary mx-5" id="example6">example6</button>
+                <button class="btn btn-primary mx-5" id="click-me">click me</button>
+            </div>
+        </div>
+        <h3 class="display-5">Show & hide tooltip buttons</h3>
+        <div class="row py-5">
+            <div class="col">
+                <button class="btn btn-primary mx-5" id="example7" title="showing tooltip by seperate btn and function">tooltip</button>
+                <button class="btn btn-danger mx-5" id="showbtn">show</button>
+                <button class="btn btn-danger mx-5" id="hidebtn">hide</button>
+            </div>
+        </div>
+        <h3 class="display-5">Toggle show/hide with button</h3>
+        <div class="row py-5">
+            <div class="col">
+                <button class="btn btn-primary mx-5" id="example9" title="showing tooltip by seperate btn and function">tooltip</button>
+                <button class="btn btn-danger mx-5" id="showbtn1">toggle</button>
+            </div>
+        </div>
+        <h3 class="display-5">Enable & Disable tooltip buttons</h3>
+        <div class="row py-5">
+            <div class="col">
+                <button class="btn btn-primary mx-5" id="example8" title="showing tooltip by seperate btn and function">tooltip</button>
+                <button class="btn btn-danger mx-5" id="showbtn2">enable</button>
+                <button class="btn btn-danger mx-5" id="hidebtn2">disable</button>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
