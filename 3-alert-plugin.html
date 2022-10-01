@@ -1,0 +1,104 @@
+<!-- V 47 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alert plugin</title>
+    <link rel="stylesheet" href="bootstrap-4.6.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="CSS/boot3.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            $('#alert-close').click(function(){
+                $('#alert-box').alert('close');
+            })
+            $('#alert-close-2').click(function(){
+                $('#alert-box-2').alert('close');
+            })
+            $("#alert-box-2").on("close.bs.alert",function(){
+                alert("close");
+            })
+            $('#alert-close-3').click(function(){
+                $('#alert-box-3').alert('close');
+            })
+            $("#alert-close-3").on("closed.bs.alert",function(){
+                alert("close");
+            })
+        });
+    </script>
+</head>
+<body>
+    <h3 class="text-center display-4 mb-3">Alert Plugins</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-primary">Message goes here...</div>
+                <div class="alert alert-secondary">Message goes here...</div>
+                <div class="alert alert-danger">Message goes here...</div>
+                <div class="alert alert-success">Message goes here...</div>
+                <div class="alert alert-warning">Message goes here...</div>
+                <div class="alert alert-info">Message goes here...</div>
+                <div class="alert alert-light">Message goes here...</div>
+                <div class="alert alert-dark">Message goes here...</div>
+            </div>
+        </div>
+    </div>
+    <!-- KIMPRO -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="alert alert-danger">
+                    <h3 class="alert-heading">Heading goes here..</h3>
+                    <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut temporibus, dolorem harum itaque earum accusamus delectus maxime soluta totam consequatur!</p>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="col">
+                <h4 class="text-center display-5">Alert with dismiss Property</h4>
+                <div class="alert alert-danger">
+                    Alert Message goes here...
+                    <button class="close" data-dismiss="alert">x</button>
+                </div>
+                <div class="alert alert-danger">
+                    with entity codes sign...
+                    <button class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-danger" id="alert-box">
+                    Click "Close" button to close alert box
+                </div>
+                <button class="btn btn-outline-danger mb-3" id="alert-close">Close</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="alert alert-success" id="alert-box-2">
+                    Click the "close" button for before alert popup
+                </div>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-outline-danger mt-1" id="alert-close-2">Close</button>
+            </div>
+            <div class="col-md-6">
+                <div class="alert alert-warning" id="alert-box-3">
+                    Click the "close" button for after alert popup
+                </div>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-outline-danger mt-1" id="alert-close-3">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
