@@ -1,0 +1,23 @@
+#S1{
+    background-color: aqua;
+    height: 250px;
+}
+#S2{
+    background-color:green;
+    height: 250px;
+}
+#S3A{
+    background-color:red;
+    height: 250px;
+}
+#S3B{
+    background-color:blue;
+    height: 250px;
+}
+#S4{
+    background-color:yellow;
+    height: 600px;
+}
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+    background-color: black;
+}
